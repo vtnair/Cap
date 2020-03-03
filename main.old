@@ -1,0 +1,19 @@
+provider "aws" {
+  
+        region          = “us-east-1”
+        access_key      = "AKIAWEF5HQBVA2L7VJPO"
+        secret_key      = "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"
+
+}
+
+resource "aws_vpc" "test_vpc" {
+  	cidr_block            = "10.0.0.0/16"
+  	instance_tenancy      = "default"
+  	enable_dns_hostnames  = true
+
+  	tags = {
+      		Name = "test_vpc"
+  	}
+
+}
+
